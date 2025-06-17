@@ -1,0 +1,30 @@
+/* static/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+nav a, main a {
+    color: white;
+    text-decoration: underline;
+    background-color: #0066cc;
+    padding: 6px 12px;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+main {
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}

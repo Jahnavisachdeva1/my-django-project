@@ -1,0 +1,51 @@
+from django.db import models
+
+class InventoryManagement(models.Model):
+    id = models.AutoField(primary_key=True)
+    onboarding_date = models.DateField(null=True, blank=True)
+    vehicle_no = models.CharField(max_length=50, unique=True, null=True, blank=True)
+    chassis_no = models.CharField(max_length=50, null=True, blank=True)
+    registration_date = models.DateField(null=True, blank=True)
+    vehicle_type_id = models.IntegerField(null=True, blank=True)
+    city_id = models.IntegerField(null=True, blank=True)
+    ownership_id = models.IntegerField(null=True, blank=True)
+    provider_id = models.IntegerField(null=True, blank=True)
+    oem_id = models.IntegerField(null=True, blank=True)
+    model = models.CharField(max_length=50, null=True, blank=True)
+    load_capacity = models.IntegerField(null=True, blank=True)
+    battery_no = models.CharField(max_length=100, null=True, blank=True)
+    charger_no = models.CharField(max_length=100, null=True, blank=True)
+    stepney = models.BooleanField(null=True, blank=True)
+    toolkits = models.BooleanField(null=True, blank=True)
+    iot_provider = models.CharField(max_length=100, null=True, blank=True)
+    iot_no = models.CharField(max_length=100, null=True, blank=True)
+    rc_copy = models.BooleanField(null=True, blank=True)
+    rc_upload = models.BinaryField(null=True, blank=True, editable=True)
+    insurance_copy = models.BinaryField(null=True, blank=True, editable=True)
+    insurance_renewal_due = models.DateField(null=True, blank=True)
+    lease_per_month = models.FloatField(null=True, blank=True)
+    number_plate_photo = models.BinaryField(null=True, blank=True, editable=True)
+    branding_photo_1 = models.BinaryField(null=True, blank=True, editable=True)
+    branding_photo_2 = models.BinaryField(null=True, blank=True, editable=True)
+    branding_photo_3 = models.BinaryField(null=True, blank=True, editable=True)
+    branding_photo_4 = models.BinaryField(null=True, blank=True, editable=True)
+    reason = models.TextField(null=True, blank=True)
+    state = models.CharField(max_length=100, null=True, blank=True)
+    parking_type = models.CharField(max_length=100, null=True, blank=True)
+    hub_address = models.CharField(max_length=255, null=True, blank=True)
+    parking_location = models.CharField(max_length=255, null=True, blank=True)
+    returning_date = models.DateField(null=True, blank=True)
+    returning_reason = models.TextField(null=True, blank=True)
+    replacement_vehicle = models.CharField(max_length=100, null=True, blank=True)
+    rto_compliance = models.BooleanField(null=True, blank=True)
+    allowed_kms = models.IntegerField(null=True, blank=True)
+    is_approved = models.BooleanField(null=True, blank=True)
+    created_at = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        managed = False  # Existing table, Django will not create or modify it
+        db_table = 'InventoryManagement'
+
+    def __str__(self):
+        return self.vehicle_no or str(self.id)
